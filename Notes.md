@@ -83,4 +83,52 @@ staging area is where the files that are staged for commit.
 * git commit -m "Commit message"
 *
 
-Once the file(s) have been committed, you then need to
+Once the file(s) have been committed, you then need to push them to the repo.
+
+
+## Push
+
+### Source tree push
+* in the tool bar there is a button named push
+* Clicking that you can choose branch etc
+* Then click push again
+
+
+### Using Git Bash
+
+* Use git push origin master
+
+## Forks
+
+* Isolated server copy of the repository
+
+* Useful if you don't have permission to push to the remote repository
+
+* E.g. origin - this is a fork name used to the gitbash
+
+* Useful for customising software, or testing features or just for security/permission reasons
+
+##Pull requests
+
+* Request to pull changes from our fork to the master repository
+* Internally we use this for code reviews by other programmers to test the code and suggest changes to your changes
+* Keep your pull requests small - limit changes to 5 to make your changes easy to review for others. Nobody wants to check 100+ file changes
+* Can be many commits. Commit for incremental change and submit pull request when you have made a significant change you want to upload
+* Can tag people and ask them to check/talk with them.
+* Anyone can comment on public repos, people will often help or teach you things
+
+## Merging and conflicts
+* Merges and conflicts need to be resolved
+* git needs your input, if two people change the same things
+
+## Branching
+
+* Master branch is the production/base/stable versions
+* Can do feature branching, branching for release versions
+* Main thing is to be consistent
+
+## Resources
+try.github.io
+gitimmersion.com
+git-scm.com/book/en/Getting-Started_Git-Basics
+gitref.org.index.html

@@ -1,134 +1,175 @@
-# Source Control 101
+# <b>Source Control 101</b>
 
-##Why
-* Allows tracking of versions of code, and collaborations for large teams
+<i>Presented by <b>Suraksha Setty</b> and <b>Luke Ryan</b> (Xero)</i>
 
-* Can work on the same file at once, as files are replicated locally.
+---
 
-* History of who changed what
+## Why Use Source Control?
+* Tracking of a code base, and collaboration for large teams.
+* Many people can work on the same file at once, as the files are replicated
+  locally.
+* History of who changed what.
+* Ease of auditing - accountability for mistakes and attribution for features
+  etc.
+* Backups - online repository in the cloud, stores any number of versions.
+* Removes the need for commented out code when testing features - just make a
+  dev branch for a feature. if it doesn't work, you can always revert!
+* Automation - especially for deployment of large applications e.g. deploying to
+  multiple environments and platforms. Can also be used for linting for errors.
 
-* Ease of auditing - accountability
+## How?
+* Repository - folder containing code
+* Commit - transaction for code changes. Time stamped with your name, recorded
+  as a hash.
 
-* Backups - online repository in the cloud, backs up major versions
+## What is Git?
+* A distributed source control method, rather than centralised. This allows
+  offline work as connection to a central server is not required!
+* Clones a local copy of the codebase.
+* Can push code to remote server repository if your changes work.
+* Written by Linus Torvalds - in 3 weeks!!!
 
-* Removes the need for commented out code when testing stuff - just make a dev branch for a feature. if it doesn't work, you can always revert
+## What is Github?
+* An online implementation of git.
+* Allows pull requests and issue creation for social coding.
+    * Include people in projects.
+    * Submit changes.
+    * Tag people.
+    * Teaching/learning platform.
+* Strong open source community!
+* Hosts code publicly for free.
 
-* Automation - especially regarding deployment for large applications. Linting also. e.g. deploying to multiple environments and platforms
+## Examples of Git Clients
+* Git Bash - Using CLI rather than GUI.
+* Github client for Windows/Mac.
+* SourceTree.
+* Git extensions.
 
-## How
+<b>We are using SourceTree and Git Bash in the workshop today.</b>
 
-Repository - folder with code
-Commit - transaction for code changes. time stamped with your name
+* SourceTree has a GUI.
+* gitbash use a CLI.
 
-## Git
-* Distributed source control vs centralised. git is distributed, which allows offline work
-* You have a local copy
-* Can push to remote server repository if your change works
-* Written by Linus Torvalds - in 3 weeks
-
-## Github
-* Online version of git
-* Pull requests for social coding. Can include people, submit changes
-* Strong open source community
-* Hosts code publicly for free
-
-##Git Clients
-Git Bash
-Github for windows/mac
-source tree
-git extensions
-
-Using sourcetree and gitbash today
-
-Sourcetree has a gui, gitbash being CLI
-
+## Creating a Repository
+1. Log in, then go to https://github.com/new
+2. Enter the repository name.
+3. Enter a description.
+4. Specify whether the repository is public or private.
+5. Initialize it with a README to save creating one later.
+6. Add .gitignore items and a license if applicable.
+7. Finally click create repository.
 
 ## Cloning
+The URL for cloning repository is found on github. Use the green clone/download
+button when on the github page for that repository.
 
-The url for the repo is found on github. Use the green clone/download button when on the github page
-
-Use GUI to clone: Use the url to repo https://github.com/Matt-McConway/github101_Xero-Workshop.git
-
-usually there will be a button to clone the repo.
-
+### Using SourceTree to Clone:
+* Use the url to clone the repository e.g.
+  https://github.com/Matt-McConway/github101_Xero-Workshop.git
+  (usually there will be a button to clone the repository).
 
 
-bash: git clone https://github.com/Matt-McConway/github101_Xero-Workshop.git
+
+### Using Git Bash to Clone:
+    git clone https://github.com/Matt-McConway/github101_Xero-Workshop.git
 
 ## Commits
-* Has a unique hash,
-* Saves changes to many files
-* Represents a piece of work from one person. Contained in the hash
-* Has a comment can include issue numbers, what was changed etc
-* A diff shows the changes made by that person + - s from additions, removal changes
-*
+* Each commit has a unique hash.
+* Saves changes to many files.
+* Represents a piece of work from one person. (Contained in the hash alongside
+  a timestamp).
+* Can comment on changes. It is good practice to include:
+    * Issue numbers.
+    * What was changed.
+    * Files that were changed.
+    * Goals of the change.
+* A diff shows the changes made by that person (+ and -'s) from additions,
+  removal and changes made within the files.
 
-Working directiory ---(git add) --> staging area ----(git commit) ----> repository
+<b>How commits work:</b>
 
-staging area is where the files that are staged for commit.
+Working directory --(git add)--> staging area --(git commit)--> repository
 
-### How to make a change in source tree
+The staging area is where the files that are staged for the commit. Useful for
+triple checking changes.
 
-* make the change
-* Add to staged area
-* Make sure you add a description
-* Then commit it
-*
+### Making a Commit in SourceTree:
+* Make the change.
+* Add to staged area.
+* Make sure you add a description!
+* Then commit the change to the repository.
 
-### Using CLI
 
-* git status  - shows that working tree is clean (if it is clean, or lists changes otherwise)
-* git add . (to add everything) or git add --all  or git add *
-* git status (then shows changes that will be committed, so it is in green rather than red)
-* git commit -m "Commit message"
-*
+### Making a Commit with Git Bash:
+    git status
+* Shows that working tree is clean, or lists changes otherwise.
 
-Once the file(s) have been committed, you then need to push them to the repo.
+
+    git add .
+* To add everything or use git add --all or git add *
+
+
+    git status
+* Should now show the changes that will be committed. They should be in green
+  rather than red.
+
+
+    git commit -m "Commit message"
+* Commit the change to the repository. The commit message is the description of
+  the changes you made.
+
+<b>Once the file(s) have been committed, you then need to push them to the
+repository!</b>
 
 
 ## Push
 
-### Source tree push
-* in the tool bar there is a button named push
-* Clicking that you can choose branch etc
-* Then click push again
+### Pushing Changes with SourceTree
+1. In the toolbar there is a button named push.
+2. Clicking that you can choose branch, etc.
+3. Then click push again to push your changes to the repository.
 
 
-### Using Git Bash
+### Pushing Changes with Git Bash
+    git push origin master
+* Origin is the name of the remote, that is the alias for the local version of
+the repository.
+* Master is the name of the branch. You can name branches whatever you like.
 
-* Use git push origin master
 
-## Forks
+## Forking a Branch
+* Isolated server-side copy of the repository.
+* Control permissions by allowing users to only push to certain branches.
+* E.g. origin - this is a fork name used in the Git Bash command used earlier.
+* Useful for customizing software by forking other peoples projects, or testing
+  features or just for security/permission reasons.
 
-* Isolated server copy of the repository
+## Pull Requests
+* Request to pull changes from our fork back into the master repository.
+* Internally Xero uses this for code reviews by other programmers to test the
+ code and suggest changes to your changes.
+* Keep your pull requests small - limit changes to ~5 to make your changes easy
+  to review for others.
+  * Nobody wants to check 100+ file changes!
+* Can be many commits. Commit for incremental change and submit a pull request
+  when you have made a significant change you want to integrate back into the
+  codebase.
+* Can tag people and ask them to check/talk with them about your code.
+* Anyone can comment on public repos, people will often help or teach you
+  things!
 
-* Useful if you don't have permission to push to the remote repository
-
-* E.g. origin - this is a fork name used to the gitbash
-
-* Useful for customising software, or testing features or just for security/permission reasons
-
-##Pull requests
-
-* Request to pull changes from our fork to the master repository
-* Internally we use this for code reviews by other programmers to test the code and suggest changes to your changes
-* Keep your pull requests small - limit changes to 5 to make your changes easy to review for others. Nobody wants to check 100+ file changes
-* Can be many commits. Commit for incremental change and submit pull request when you have made a significant change you want to upload
-* Can tag people and ask them to check/talk with them.
-* Anyone can comment on public repos, people will often help or teach you things
-
-## Merging and conflicts
-* Merges and conflicts need to be resolved
-* git needs your input, if two people change the same things
+## Merging and Conflicts
+* Merges and conflicts need to be resolved before a branch is integrated.
+* Git needs your input, if two people change the same lines or file for
+  something. i.e. It needs to know which changes it should use.
 
 ## Branching
+* Master branch is the production/base/stable version of your code.
+* Can branch for features and/or different release versions.
+* The main thing is to be consistent!
 
-* Master branch is the production/base/stable versions
-* Can do feature branching, branching for release versions
-* Main thing is to be consistent
-
-## Resources
-try.github.io
-gitimmersion.com
-git-scm.com/book/en/Getting-Started_Git-Basics
-gitref.org.index.html
+## Further Resources
+* https://try.github.io/
+* http://gitimmersion.com/
+* https://git-scm.com/book/en/v2/Getting-Started-Git-Basics
+* http://gitref.org/
